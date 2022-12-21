@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.b7d414dd.css",
-    "main.js": "/static/js/main.d479453c.js",
-    "static/media/fiverr.png": "/static/media/fiverr.81b1dc668695115aa3fa.png",
-    "static/media/htmllogo.png": "/static/media/htmllogo.42c3f47a90f43d3fc1b5.png",
-    "static/media/javascriptlogo.png": "/static/media/javascriptlogo.7f8751632b42a9932c15.png",
-    "static/media/Csharp_Logo.png": "/static/media/Csharp_Logo.cee8b732f9e40ac4fb12.png",
-    "static/media/csslogo.png": "/static/media/csslogo.409b3a09bb70c51542f8.png",
-    "static/media/favicon.ico": "/static/media/favicon.4fe75d5f9adb18067b85.ico",
-    "index.html": "/index.html",
-    "main.b7d414dd.css.map": "/static/css/main.b7d414dd.css.map",
-    "main.d479453c.js.map": "/static/js/main.d479453c.js.map"
+    "main.css": "/Myth0000/static/css/main.b7d414dd.css",
+    "main.js": "/Myth0000/static/js/main.3877680d.js",
+    "static/media/fiverr.png": "/Myth0000/static/media/fiverr.81b1dc668695115aa3fa.png",
+    "static/media/htmllogo.png": "/Myth0000/static/media/htmllogo.42c3f47a90f43d3fc1b5.png",
+    "static/media/javascriptlogo.png": "/Myth0000/static/media/javascriptlogo.7f8751632b42a9932c15.png",
+    "static/media/Csharp_Logo.png": "/Myth0000/static/media/Csharp_Logo.cee8b732f9e40ac4fb12.png",
+    "static/media/csslogo.png": "/Myth0000/static/media/csslogo.409b3a09bb70c51542f8.png",
+    "static/media/favicon.ico": "/Myth0000/static/media/favicon.4fe75d5f9adb18067b85.ico",
+    "index.html": "/Myth0000/index.html",
+    "main.b7d414dd.css.map": "/Myth0000/static/css/main.b7d414dd.css.map",
+    "main.3877680d.js.map": "/Myth0000/static/js/main.3877680d.js.map"
   },
   "entrypoints": [
     "static/css/main.b7d414dd.css",
-    "static/js/main.d479453c.js"
+    "static/js/main.3877680d.js"
   ]
 }

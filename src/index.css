@@ -1,7 +1,6 @@
 :root {
   --whiteColor: rgb(239, 239, 239);
   --websitePageColor: rgb(51,53,59);
-  --navigationBarColor: rgb(40,40,45);
   --textColor: rgb(161, 129, 255, 0.7);
   --brighterPurpleColor: rgb(138, 99, 255, 0.7);
   --pageHeight: 650px;
@@ -10,53 +9,6 @@
 body {
   font-family: 'Segoe UI';
   background-color: #292D34;
-}
-
-/*************
-NAVIGATION BAR
-**************/
-.navigation_bar {
-  /*border: 2px solid black;*/
-  background-color: var(--navigationBarColor);
-  height:50px;
-  margin-top: -9px;
-  margin-left: -9px;
-
-}
-
-.navigation_bar_child {
-  float:left;
-  margin-left: 1%;
-  margin-top: 8px;
-}
-
-#title {
-  font-size: x-large;
-  color: var(--whiteColor);
-}
-
-#logo {
-  width: 35px;
-}
-
-.navigation_buttons_container {
-  margin-top: 0px;
-  text-align: center;
-  float: initial;
-}
-
-.navigation_button {
-  width: 100px;
-  height: 50px;
-  border: none;
-  background-color: var(--navigationBarColor);
-  color: var(--whiteColor);
-  font-weight: 550;
-}
-
-.navigation_button:hover {
-  background-color: rgb(41, 41, 46);
-  font-weight: 900;
 }
 
 /**************

@@ -1,0 +1,16 @@
+[
+    {
+      "id": 1,
+      "name": "MYTH0000 Website",
+      "description": "My personal website where I showcase the projects I have created in the past.",
+      "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1054848588640964650/image.png?width=1369&height=700",
+      "link": "https://github.com/Myth0000/react_web"
+    },
+    {
+      "id": 2,
+      "name": "ArmadilloGaming Discord Bot",
+      "description": "I created this discord bot for a small discord community of friends, it has cool things such as level systems, shop, inventory system, etc.",
+      "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1054941880997138452/ArmadilloGamingBotThumbnail.png",
+      "link": "https://github.com/Myth0000/ArmadilloGamingDiscordBot"
+    }
+  ]

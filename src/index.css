@@ -6,7 +6,8 @@
   --pageHeight: 650px;
 }
 
-body {
+
+html {
   font-family: 'Segoe UI';
   background-color: #292D34;
 }

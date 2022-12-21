@@ -1,5 +1,6 @@
 import React from "react";
 import Project from "../components/Project";
+import mockData from "../mockData.json"
 
 export default class Projects extends React.Component {
   constructor() {
@@ -10,13 +11,20 @@ export default class Projects extends React.Component {
   }
 
   componentDidMount() {
-    let projectsJson = fetch("/projects")
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          projects: data,
-        });
-      });
+
+    // MOCK DATA 
+    this.setState({
+            projects: mockData,
+          });
+
+    // USE THIS AFTER I FINNALLY HOST THE ProjectsAPI
+    // let projectsJson = fetch("/projects")
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     this.setState({
+    //       projects: data,
+    //     });
+    //   });
   }
 
   render() {

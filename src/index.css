@@ -24,6 +24,8 @@ Container (Everything below <HomePage />)
 .view {
   display: flex;
   justify-content: center;
+  min-width: 1244px;
+  min-height: 640;
 }
 
 /**************

@@ -14,39 +14,36 @@ export default function HomePage() {
   {
     console.log(element);
     window.scrollTo({
-      top: element.current.offsetTop,
+      top: element.current.offsetTop - 100, /* using flex display on view makes it so it scrolls below the page title, so I had to subtract 100 from it*/
       behavior: "smooth"
     })
   }
 
   return (
-    <div className="homepage">
-      <h1 id="homepage_text">MYTH0000</h1>
-      
-      <div className="homepage_image_container">
-          <img id="css_logo" src={CssLogo} alt="CSS Logo"/>
-          <img id="csharp_logo" src={CSharpLogo} alt="C Sharp Logo"/>
-          <img id="javascript_logo" src={JavaScriptLogo} alt="javascript_logo"/>
-          <img id="html_logo" src={HtmlLogo} alt="H T M L Logo"/>
-      </div>
-      
-      <div className="homepage_navigation_buttons">
-        <button className="homepage_navigation_button" id="ProjectsButton" onClick={() => navigationButtonClicked(projectsElement)}>
-          Projects
-        </button>
-        <button className="homepage_navigation_button" id="AboutMeButton" onClick={() => navigationButtonClicked(aboutMeElement)}>
-          About Me
-        </button>
-      </div>
+    <>
+      <div className="homepage">
+        <h1 id="homepage_text">MYTH0000</h1>
 
-      <div className="aboutMeContainer" ref={aboutMeElement}>
-        <AboutMe />
+        <div className="homepage_navigation_buttons">
+          <button className="homepage_navigation_button" id="ProjectsButton" onClick={() => navigationButtonClicked(projectsElement)}>
+            Projects
+          </button>
+          <button className="homepage_navigation_button" id="AboutMeButton" onClick={() => navigationButtonClicked(aboutMeElement)}>
+            About Me
+          </button>
+        </div>
+        
+        <div className="homepage_image_container">
+            <img id="css_logo" src={CssLogo} alt="CSS Logo"/>
+            <img id="csharp_logo" src={CSharpLogo} alt="C Sharp Logo"/>
+            <img id="javascript_logo" src={JavaScriptLogo} alt="javascript_logo"/>
+            <img id="html_logo" src={HtmlLogo} alt="H T M L Logo"/>
+        </div>
+        
+        <AboutMe scrollReference={aboutMeElement}/>
+        <Projects scrollReference={projectsElement}/>
       </div>
-
-      <div className="projectsContainer" ref={projectsElement}>
-        <Projects />
-      </div>
-      
-    </div>
+    </>
+    
   );
 }

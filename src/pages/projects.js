@@ -3,7 +3,7 @@ import Project from "../components/Project";
 import mockData from "../mockData.json"
 
 export default class Projects extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
       projects: [],
@@ -42,7 +42,7 @@ export default class Projects extends React.Component {
 
 
     return (
-      <div className="projects">
+      <div className="projects" ref={this.props.scrollReference}>
         <h1 className="topic_title">Projects</h1>
         <p className="topic_description">
           These are some of the projects I have worked on during my software

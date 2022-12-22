@@ -6,9 +6,14 @@ import fiverrImage from "../images/fiverr.png"
 
 export default class AboutMe extends React.Component
 {
+    constructor(props)
+    {
+        super();
+    }
+
     render() {
         return (
-            <div className="aboutme">
+            <div className="aboutme" ref={this.props.scrollReference}>
                 <h1 id="aboutme_text" className="topic_title">About Me</h1>
                 <p className="topic_description">I am a software enthusiast who loves creating new things on the internet. I have created many things, such as games, bots, and websites, during my software developement journey.</p>
 

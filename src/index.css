@@ -4,6 +4,7 @@
   --textColor: rgb(161, 129, 255, 0.7);
   --brighterPurpleColor: rgb(138, 99, 255, 0.7);
   --pageHeight: 650px;
+  --pageLeftOffset: 21.5%;
 }
 
 
@@ -20,17 +21,29 @@ Container (Everything below <HomePage />)
   position: relative;
 }
 
+.view {
+  display: flex;
+  justify-content: center;
+}
 
 /**************
 Home Page
 ***************/
+.homepage {
+  position: relative;
+  bottom: 80px;
+  width: 1245px;
+  height: 640px;
+}
+
 #homepage_text {
   color: var(--textColor);
   font-size: 128px;
-  position: absolute;
-  top:25%;
+  position: relative;
+  top:38%;
   left: 23.5%;
   z-index: 1000;
+  width: 675px;
 }
 
 #homepage_text:hover
@@ -40,60 +53,61 @@ Home Page
 
 .homepage_image_container {
   z-index: 0;
+  position: relative;
+  bottom: 50%;
 }
 
 #css_logo
 {
   width:250px;
-  position: absolute;
-  top: 10%;
+  position: relative;
+  bottom: -17px;
   left: 5%;
   filter: blur(3px);
 }
 
 #csharp_logo
 {
-  position: absolute;
-  left: 19.5%;
-  top: 50%;
+  position: relative;
+  left: -8px;
+  bottom: -305px;
   filter: blur(3px);
 }
 
 #javascript_logo
 {
-  position: absolute;
-  left: 35%;
-  top: 5%;
+  position: relative;
+  left: -96px;
+  bottom: -33px;
   filter: blur(3px);
 }
 
 #html_logo
 {
   width: 300px;
-  position: absolute;
-  left: 70%;
-  top: 35%;
+  position: relative;
+  left: 878.5px;
+  bottom: 105px;
   filter: blur(3px);
 }
 
 .homepage_navigation_button
 {
+  z-index: 500;
   background-color: rgb(51, 53, 59, 0.3);
   border: none;
-  filter: blur(1px);
   border-radius: 10px;
   color: var(--textColor);
   font-weight: bold;
-  position: absolute;
+  position: relative;
   width: 200px;
   height: 60px;
   font-size: 35px;
-  top: 47.5%;
+  top: 49px;
 }
 
 .homepage_navigation_button:hover
 {
-  filter: blur(0px);
   color: var(--brighterPurpleColor);
 }
 
@@ -104,19 +118,19 @@ Home Page
 
 #AboutMeButton
 {
-  left: 5%;
+  left: -10%;
 }
 
 /**************
 About Me Page
 ***************/
-.aboutMeContainer
+.aboutme
 {
   height: var(--pageHeight);
   position: relative;
-  top: 800px;
+  top: 0px;
   width: 700px;
-  left: 23.5%;
+  left: var(--pageLeftOffset);
 }
 
 .topic_title
@@ -173,13 +187,13 @@ p.topic_description:hover
 Projects Page
 ***************/
 
-.projectsContainer
+.projects
 {
   height: var(--pageHeight);
   position: relative;
-  top: 800px;;
+  top: 0px;;
   width: 700px;
-  left: 23.5%;
+  left: var(--pageLeftOffset);
 
   text-align: center;
 }

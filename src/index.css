@@ -13,6 +13,7 @@ html {
   background-color: #292D34;
 }
 
+
 /**************
 Container (Everything below <HomePage />)
 ***************/
@@ -36,6 +37,9 @@ Home Page
   bottom: 80px;
   width: 1245px;
   height: 640px;
+
+  /* makes images/texts unselectable on most browsers*/
+  user-select: none;
 }
 
 #homepage_text {

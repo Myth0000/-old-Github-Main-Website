@@ -19,6 +19,8 @@ export default function HomePage() {
     })
   }
 
+
+
   return (
     <>
       <div className="homepage">
@@ -34,10 +36,10 @@ export default function HomePage() {
         </div>
         
         <div className="homepage_image_container">
-            <img id="css_logo" src={CssLogo} alt="CSS Logo"/>
-            <img id="csharp_logo" src={CSharpLogo} alt="C Sharp Logo"/>
-            <img id="javascript_logo" src={JavaScriptLogo} alt="javascript_logo"/>
-            <img id="html_logo" src={HtmlLogo} alt="H T M L Logo"/>
+            <img id="css_logo" src={CssLogo} alt="CSS Logo" draggable="false"/>
+            <img id="csharp_logo" src={CSharpLogo} alt="C Sharp Logo" draggable="false"/>
+            <img id="javascript_logo" src={JavaScriptLogo} alt="javascript_logo" draggable="false"/>
+            <img id="html_logo" src={HtmlLogo} alt="H T M L Logo" draggable="false"/>
         </div>
         
         <AboutMe scrollReference={aboutMeElement}/>

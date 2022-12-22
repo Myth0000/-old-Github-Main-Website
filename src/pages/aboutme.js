@@ -32,7 +32,7 @@ function SocialMedia(props)
         <div className="socialMediaContainer">
             <a className="socialMediaLink" href={props.link} target="_blank">
                 <div>
-                <img id="socialMediaImage" src={props.image} alt="Social Media Image" />
+                <img id="socialMediaImage" src={props.image} alt="Social Media Image" draggable="false" />
                 <p id="socialMediaContent">{props.content}</p>
                 </div>
             </a>

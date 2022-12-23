@@ -9,6 +9,7 @@ import Projects from "./projects";
 export default function HomePage() {
   const aboutMeElement = useRef(null);
   const projectsElement = useRef(null);
+  let htmlWidth = document.documentElement.clientWidth - 20;
 
   const navigationButtonClicked = (element) =>
   {
@@ -18,7 +19,6 @@ export default function HomePage() {
       behavior: "smooth"
     })
   }
-
 
 
   return (
@@ -44,6 +44,9 @@ export default function HomePage() {
         
         <AboutMe scrollReference={aboutMeElement}/>
         <Projects scrollReference={projectsElement}/>
+        <div className="footer" style={{width:htmlWidth}}>
+          <a href="https://myth0000.github.io">myth0000.github.io</a>
+        </div>
       </div>
     </>
     

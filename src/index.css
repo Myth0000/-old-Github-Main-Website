@@ -195,7 +195,7 @@ Projects Page
 
 .projects
 {
-  height: var(--pageHeight);
+  height: auto;
   position: relative;
   top: 0px;;
   width: 700px;
@@ -244,6 +244,20 @@ Projects Page
   border-radius: 10px;
 
 }
+
+/**************
+F O O T E R
+***************/
+.footer {
+  margin-left: -8px;
+  height: 20px;
+  background-color: #23262c;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--brighterPurpleColor);
+  font-size: small;
+}
+
 
 /**************
 Scroll Bar Style

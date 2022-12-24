@@ -7,9 +7,22 @@
   --pageLeftOffset: 21.5%;
 }
 
+@font-face {
+  font-family: "OpenSans-Medium";
+  src: local("OpenSans-Medium"), url(./fonts/OpenSans-Medium.ttf) format("truetype");
+}
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: local("OpenSans-Bold"), url(./fonts/OpenSans-Bold.ttf) format("truetype");
+}
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: local("OpenSans-Regular"), url(./fonts/OpenSans-Regular.ttf) format("truetype");
+}
 
 html {
-  font-family: 'Segoe UI';
+  /*font-family: 'Segoe UI';*/
+  font-family: "OpenSans-Regular";
   background-color: #292D34;
 }
 
@@ -26,7 +39,7 @@ Container (Everything below <HomePage />)
   display: flex;
   justify-content: center;
   min-width: 1244px;
-  min-height: 640;
+  min-height: 640px;
 }
 
 /**************
@@ -34,7 +47,6 @@ Home Page
 ***************/
 .homepage {
   position: relative;
-  bottom: 80px;
   width: 1245px;
   height: 640px;
 
@@ -44,12 +56,14 @@ Home Page
 
 #homepage_text {
   color: var(--textColor);
+  font-family: "OpenSans-Bold";
   font-size: 128px;
-  position: relative;
-  top:38%;
-  left: 23.5%;
   z-index: 1000;
   width: 675px;
+
+  position: relative;
+  top: 430px;
+  left: 285px;
 }
 
 #homepage_text:hover
@@ -57,10 +71,11 @@ Home Page
   color: var(--brighterPurpleColor);
 }
 
-.homepage_image_container {
+.banner {
   z-index: 0;
   position: relative;
-  bottom: 50%;
+  top: -345px;
+  height: 640px;
 }
 
 #css_logo
@@ -97,19 +112,25 @@ Home Page
   filter: blur(3px);
 }
 
+.homepage_navigation_buttons
+{
+  position: relative;
+  top: 330px;
+  left: 417.5px;
+  width: 450px;
+  z-index: 500;
+}
+
 .homepage_navigation_button
 {
-  z-index: 500;
   background-color: rgb(51, 53, 59, 0.3);
   border: none;
   border-radius: 10px;
   color: var(--textColor);
   font-weight: bold;
-  position: relative;
   width: 200px;
   height: 60px;
   font-size: 35px;
-  top: 49px;
 }
 
 .homepage_navigation_button:hover
@@ -117,14 +138,11 @@ Home Page
   color: var(--brighterPurpleColor);
 }
 
-#ProjectsButton
-{
-  left: 79%;
-}
 
 #AboutMeButton
 {
-  left: -10%;
+  position: relative;
+  left: 10px;
 }
 
 /**************
@@ -141,6 +159,7 @@ About Me Page
 
 .topic_title
 {
+  font-family: "OpenSans-Bold";
   color: var(--whiteColor);
   text-align: center;
 }
@@ -216,6 +235,7 @@ Projects Page
 
 #projectName
 {
+  font-family: "OpenSans-Medium";
   font-weight: 500;
   font-size: 20px;
   margin-bottom: -20px;
@@ -251,6 +271,7 @@ F O O T E R
 .footer {
   margin-left: -8px;
   height: 20px;
+  width: 1260px;
   background-color: #23262c;
   margin-top: 20px;
   text-align: center;

@@ -26,99 +26,49 @@ html {
   background-color: #292D34;
 }
 
-
-/**************
-Container (Everything below <HomePage />)
-***************/
-.container
-{
-  position: relative;
+body {
+  margin: 0;
 }
 
-.view {
-  display: flex;
-  justify-content: center;
-  min-width: 1244px;
-  min-height: 640px;
-}
 
 /**************
 Home Page
 ***************/
 .homepage {
-  position: relative;
-  width: 1245px;
-  height: 640px;
-
   /* makes images/texts unselectable on most browsers*/
   user-select: none;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #homepage_text {
   color: var(--textColor);
   font-family: "OpenSans-Bold";
   font-size: 128px;
-  z-index: 1000;
-  width: 675px;
-
-  position: relative;
-  top: 430px;
-  left: 285px;
+  margin: 0px;
 }
+
 
 #homepage_text:hover
 {
   color: var(--brighterPurpleColor);
 }
 
-.banner {
-  z-index: 0;
-  position: relative;
-  top: -345px;
-  height: 640px;
-}
-
-#css_logo
-{
-  width:250px;
-  position: relative;
-  bottom: -17px;
-  left: 5%;
-  filter: blur(3px);
-}
-
-#csharp_logo
-{
-  position: relative;
-  left: -8px;
-  bottom: -305px;
-  filter: blur(3px);
-}
-
-#javascript_logo
-{
-  position: relative;
-  left: -96px;
-  bottom: -33px;
-  filter: blur(3px);
-}
-
-#html_logo
-{
-  width: 300px;
-  position: relative;
-  left: 878.5px;
-  bottom: 105px;
-  filter: blur(3px);
-}
-
 .homepage_navigation_buttons
 {
-  position: relative;
-  top: 330px;
-  left: 417.5px;
-  width: 450px;
-  z-index: 500;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }
 
 .homepage_navigation_button
@@ -138,11 +88,43 @@ Home Page
   color: var(--brighterPurpleColor);
 }
 
+@media screen and (max-width: 700px) {
+  #homepage_text
+  {
+    font-size: 100px;
+  }
 
-#AboutMeButton
-{
-  position: relative;
-  left: 10px;
+  .homepage_navigation_button
+  {
+    width:  180px;
+    height: 60px;
+    font-size: 30px;
+  }
+}
+
+/* mobile devices */
+@media screen and (max-width: 550px) {
+  #homepage_text
+  {
+    font-size: 60px;
+  }
+
+  .homepage_navigation_buttons {
+    flex-direction: column;
+  }
+}
+
+.HomepageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 200px;
+}
+
+.HomepageContent:last-child {
+  margin: 50px;
 }
 
 /**************
@@ -150,12 +132,13 @@ About Me Page
 ***************/
 .aboutme
 {
-  height: var(--pageHeight);
-  position: relative;
-  top: 0px;
-  width: 700px;
-  left: var(--pageLeftOffset);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 600px;
 }
+
 
 .topic_title
 {
@@ -181,7 +164,54 @@ p.topic_description:hover
   color: var(--textColor);
 }
 
-.socialMediaContainer
+/************************
+S O C I A L    M E D I A
+************************/
+.SocialMedia {
+  position: relative;
+  top: 10px;
+  background-color: #1E2024;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  text-decoration: none;
+  opacity: 0.5;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+
+  gap: 60px;
+}
+
+.SocialMedia img {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 30px;
+}
+
+.SocialMedia p {
+  font-size: 15px;
+  width: 50%;
+  color: var(--whiteColor);
+  text-align: center;
+}
+
+.SocialMedia:hover {
+  opacity: 1;
+}
+
+.SocialMediaContainer {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  gap: 10px;
+}
+
+
+/* .socialMediaContainer
 {
   --hoverTextColor: var(--whiteColor);
 
@@ -206,7 +236,7 @@ p.topic_description:hover
   color: var(--hoverTextColor);
   margin-left: 10px;
   float: right;
-  }
+  } */
 
 /**************
 Projects Page
@@ -214,11 +244,7 @@ Projects Page
 
 .projects
 {
-  height: auto;
-  position: relative;
-  top: 0px;;
   width: 700px;
-  left: var(--pageLeftOffset);
 
   text-align: center;
 }

@@ -127,6 +127,8 @@ Home Page
   margin: 50px;
 }
 
+
+
 /**************
 About Me Page
 ***************/
@@ -162,6 +164,12 @@ p.topic_description:hover
 {
   font-size: 30px;
   color: var(--textColor);
+}
+
+@media screen and (max-width: 650px) {
+  .aboutme {
+    width: 95vw;
+  }
 }
 
 /************************
@@ -208,6 +216,12 @@ S O C I A L    M E D I A
   display: grid;
   grid-template-columns: 300px 300px;
   gap: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .SocialMediaContainer {
+    grid-template-columns: 300px;
+  }
 }
 
 
@@ -289,6 +303,12 @@ Projects Page
   height: 300px;
   border-radius: 10px;
 
+}
+
+@media screen and (max-width: 650px) {
+  .projects {
+    width: 95vw;
+  }
 }
 
 /**************

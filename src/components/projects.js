@@ -1,5 +1,5 @@
 import React from "react";
-import Project from "../components/Project";
+import { useState } from "react";
 import mockData from "../mockData.json"
 
 export default class Projects extends React.Component {
@@ -48,8 +48,31 @@ export default class Projects extends React.Component {
           These are some of the projects I have worked on during my software
           crusade.
         </p>
-        {data.length === 0 ? null : data}
+        <div className="projectsContainer">
+          {data.length === 0 ? null : data}
+        </div>
       </div>
     );
   }
+}
+
+function Project(props) {
+  // underlines project name on hover
+  const [textUnderlined, setTextUnderlined] = useState("none");
+  function onHover()
+  {
+    setTextUnderlined("underline");
+  }
+
+  function onNoHover()
+  {
+    setTextUnderlined("none");
+  }
+
+  return (
+    <div className="Project" onMouseOver={onHover} onMouseLeave={onNoHover}>
+      <img src={props.imageUrl} draggable="false"/>
+      <p style={{textDecoration: textUnderlined}}>{props.name}</p>
+    </div>
+  );
 }

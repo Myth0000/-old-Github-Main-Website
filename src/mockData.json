@@ -4,20 +4,32 @@
       "name": "MYTH0000 Website",
       "description": "My personal website where I showcase the projects I have created in the past.",
       "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699213512805/myth0000logo.png",
-      "link": "https://github.com/Myth0000/Myth0000.github.io"
+      "link": "https://github.com/Myth0000/Myth0000.github.io",
+      "socialMediaArray": [
+        {"content": "Github Page", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1064018128914370650/GithubWhite.png", "link": "https://github.com/Myth0000/Myth0000.github.io"},
+        {"content": "Website", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699213512805/myth0000logo.png", "link": "https://myth0000.github.io"}
+      ]
     },
     {
       "id": 2,
       "name": "ArmadilloGaming Discord Bot",
       "description": "I created this discord bot for a small discord community of friends, it has cool things such as level systems, shop, inventory system, etc.",
       "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699834269877/armadilloGamingIcon.png",
-      "link": "https://github.com/Myth0000/ArmadilloGamingDiscordBot"
+      "link": "https://github.com/Myth0000/ArmadilloGamingDiscordBot",
+      "socialMediaArray": [
+        {"content": "Github Page", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1064018128914370650/GithubWhite.png", "link": "https://github.com/Myth0000/ArmadilloGamingDiscordBot"},
+        {"content": "Website", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699213512805/myth0000logo.png", "link": "https://myth0000.github.io/armadillogaming"}
+      ]
     },
     {
       "id": 3,
       "name": "Snake Game",
       "description": "A fun little snake game I created.",
       "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699540660235/snakeGameLogo.png",
-      "link": "https://github.com/Myth0000/Snake-Game"
+      "link": "https://github.com/Myth0000/Snake-Game",
+      "socialMediaArray": [
+        {"content": "Github Page", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1064018128914370650/GithubWhite.png", "link": "https://github.com/Myth0000/Snake-Game"},
+        {"content": "Website", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699213512805/myth0000logo.png", "link": "https://myth0000.github.io/Snake-Game"}
+      ]
     }
   ]

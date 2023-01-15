@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import mockData from "../mockData.json"
+import mockData from "../mockData.json";
+import SocialMedia from "./SocialMedia";
+import githubImage from "../images/GitHub.png";
+import websiteLogo from "../images/myth0000logo.png";
 
 export default class Projects extends React.Component {
   constructor(props) {
@@ -37,9 +40,14 @@ export default class Projects extends React.Component {
         description={project.description}
         imageUrl={project.imageUrl}
         link={project.link}
+        socialMediaArray={project.socialMediaArray.map((socialMedia, index) => (
+          <SocialMedia content={socialMedia.content} key={index} size="small"
+          image={socialMedia.imageUrl} link={socialMedia.link} /> 
+        ))}
       />
     ));
 
+// {"content": , "imageUrl": , "link": }
 
     return (
       <div className="projects" ref={this.props.scrollReference}>
@@ -58,21 +66,65 @@ export default class Projects extends React.Component {
 
 function Project(props) {
   // underlines project name on hover
-  const [textUnderlined, setTextUnderlined] = useState("none");
-  function onHover()
-  {
-    setTextUnderlined("underline");
-  }
+  const [showProjectOverview, setShowProjectOverview] = useState(false);
 
-  function onNoHover()
-  {
-    setTextUnderlined("none");
+
+  function projectClicked() {
+    setShowProjectOverview(true);
   }
 
   return (
-    <div className="Project" onMouseOver={onHover} onMouseLeave={onNoHover}>
-      <img src={props.imageUrl} draggable="false"/>
-      <p style={{textDecoration: textUnderlined}}>{props.name}</p>
+    <>
+      { /* If isDynamic=true, SimpleProject will change on hover & show ProjectOverview on click */ }
+      <SimpleProject isDynamic={true} name={props.name} imageUrl={props.imageUrl} projectClicked={projectClicked}/>
+      { showProjectOverview === true ?
+      <ProjectOverview name={props.name} imageUrl={props.imageUrl}
+      socialMediaArray={props.socialMediaArray}
+      />
+      : null }
+    </>
+  );
+}
+
+function ProjectOverview(props) {
+  return (
+    <div className="ProjectOverview">
+      <div className="ProjectHeader">
+        <SimpleProject name={props.name} imageUrl={props.imageUrl} />
+        <div className="ProjectSocialMediaContainer"> {props.socialMediaArray} </div>
+      </div>
+      <div id="line" />
+      <div className="ProjectDetails">
+      HOLA
+      </div>
     </div>
   );
+}
+
+function SimpleProject(props)
+{
+  const [textDeco, setTextDecoration] = useState("none");
+  let content = <>
+    <img src={props.imageUrl} draggable="false"/>
+    <p style={{textDecoration: textDeco}}>{props.name}</p>
+  </>
+  
+  if(props.isDynamic === true)
+  {
+    return (
+      <div className="Project"
+      onMouseOver={() => { setTextDecoration("underline")}}
+      onMouseLeave={() => { setTextDecoration("none")}}
+      onClick={props.projectClicked}> {content} </div>
+    );
+  }
+  else
+  {
+    return (
+      <div className="Project">
+          {content}
+      </div>
+    )
+  }
+  
 }

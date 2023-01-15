@@ -172,6 +172,18 @@ p.topic_description:hover
   }
 }
 
+.SocialMediaContainer {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  gap: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .SocialMediaContainer {
+    grid-template-columns: 300px;
+  }
+}
+
 /************************
 S O C I A L    M E D I A
 ************************/
@@ -179,7 +191,7 @@ S O C I A L    M E D I A
   position: relative;
   top: 10px;
   background-color: #1E2024;
-  width: 300px;
+  max-width: 300px;
   height: 50px;
   border-radius: 10px;
   text-decoration: none;
@@ -212,16 +224,16 @@ S O C I A L    M E D I A
   opacity: 1;
 }
 
-.SocialMediaContainer {
-  display: grid;
-  grid-template-columns: 300px 300px;
-  gap: 10px;
+#SmallSocialMedia {
+  width: 190px;
+  height: 40px;
+  gap: 30px;
 }
 
-@media screen and (max-width: 650px) {
-  .SocialMediaContainer {
-    grid-template-columns: 300px;
-  }
+#SmallSocialMedia img {
+  width: 30px;
+  height: 30px;
+  left: 20px;
 }
 
 /**************
@@ -276,6 +288,44 @@ Projects Page
   .projectsContainer {
     grid-template-columns: var(--gridSize);
   }
+}
+
+/* Project Overview */
+.ProjectOverview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  display: grid;
+  grid-template-columns: 270px 10px auto;
+  align-items: center;
+
+
+  width: 800px;
+  height: 500px;
+  background-color: rgb(161, 129, 255, 0.1);
+  backdrop-filter: blur(5px);
+  /*background-color: rgba(19, 19, 19, 0.9);*/
+}
+
+.ProjectOverview #line {
+  background-color: #232323;
+  height: 450px;
+  width: 1px;
+  border-radius: 10px;
+}
+
+.ProjectHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ProjectSocialMediaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /**************

@@ -236,6 +236,109 @@ S O C I A L    M E D I A
   left: 20px;
 }
 
+/************************
+S L I D E  S H O W
+************************/
+
+.slideshow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 500px;
+  height: 300px;
+  background-color: transparent;
+
+  user-select: none;
+}
+
+.slideshowImage {
+  border-radius: 10px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.imageNavigationButtons {
+  position: absolute;
+  display: flex;
+  gap: 350px;
+}
+
+.imageNavigationButtonsMobile {
+  position: absolute;
+  display: flex;
+  gap: 200px;
+}
+
+.imageNavigationButton {
+  width: 60px;
+  height: 60px;
+  opacity: 0.62;
+}
+
+.imageNavigationButtonMobile {
+  width: 35px;
+  height: 35px;
+  opacity: 0.62;
+}
+
+.slideshowImageIndicators {
+  height: 16px;
+  position: absolute;
+  margin-top: 270px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.slideshowImageIndicatorsMobile {
+  position: absolute;
+  margin-top: 160px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.slideshowImageIndicatorOnImage {
+  background-color: var(--textColor);
+  opacity: 0.8;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.slideshowImageIndicatorOnImageMobile {
+  background-color: var(--textColor);
+  opacity: 0.8;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.slideshowImageIndicator {
+  background-color: var(--textColor);
+  opacity: 0.42;
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.slideshowImageIndicatorMobile {
+  background-color: var(--textColor);
+  opacity: 0.42;
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+
 /**************
 Projects Page
 ***************/
@@ -305,13 +408,29 @@ Projects Page
   width: 800px;
   height: 500px;
   background-color: rgb(161, 129, 255, 0.1);
-  backdrop-filter: blur(5px);
-  /*background-color: rgba(19, 19, 19, 0.9);*/
+  backdrop-filter: blur(8px);
+  border-radius: 5px;
+}
+
+.ProjectOverview button {
+  width: fit-content;
+  height: fit-content;
+  
+  position: absolute;
+  top: 3px;
+  right: 3px;
+
+  background-color: var(--brighterPurpleColor);
+  border: none;
+  border-radius: 3px;
+  opacity: 0.3;
+  color: var(--textColor);
+  font-size: 20px;
 }
 
 .ProjectOverview #line {
   background-color: #232323;
-  height: 450px;
+  height: 90%;
   width: 1px;
   border-radius: 10px;
 }
@@ -327,6 +446,64 @@ Projects Page
   flex-direction: column;
   gap: 10px;
 }
+
+.ProjectDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProjectDetails p {
+  color: var(--textColor);
+  font-family: "OpenSans-Bold";
+  width: 80%;
+}
+
+@media screen and (max-width: 800px) {
+  .ProjectOverview {
+    width: 600px;
+    grid-template-columns: 200px 10px auto;
+  }
+
+  .ProjectOverview .slideshow {
+    width: 300px;
+    height: 200px;
+  }
+
+  .ProjectOverview .slideshow .imageNavigationButtons {
+    gap: 230px;
+  }
+
+  .ProjectOverview .slideshow .imageNavigationButton {
+    width: 35px;
+    height: 35px;
+  }
+
+  .ProjectOverview .slideshow .slideshowImageIndicators {
+    margin-top: 160px;
+  }
+}
+
+@media screen and (max-width: 625px) {
+  .ProjectOverview {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .ProjectOverview #line {
+    display: none;
+  }
+
+  .ProjectOverview .slideshow {
+    display: none;
+  }
+}
+
+
 
 /**************
 F O O T E R

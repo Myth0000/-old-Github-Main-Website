@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import mockData from "../mockData.json";
 import SocialMedia from "./SocialMedia";
+import Slideshow from "./Slideshow";
 import githubImage from "../images/GitHub.png";
 import websiteLogo from "../images/myth0000logo.png";
 
@@ -70,7 +71,12 @@ function Project(props) {
 
 
   function projectClicked() {
+    // updates state
     setShowProjectOverview(true);
+  }
+
+  function closeButtonClicked() {
+    setShowProjectOverview(false);
   }
 
   return (
@@ -78,8 +84,8 @@ function Project(props) {
       { /* If isDynamic=true, SimpleProject will change on hover & show ProjectOverview on click */ }
       <SimpleProject isDynamic={true} name={props.name} imageUrl={props.imageUrl} projectClicked={projectClicked}/>
       { showProjectOverview === true ?
-      <ProjectOverview name={props.name} imageUrl={props.imageUrl}
-      socialMediaArray={props.socialMediaArray}
+      <ProjectOverview name={props.name} description={props.description} imageUrl={props.imageUrl}
+      socialMediaArray={props.socialMediaArray} closeButtonClicked={closeButtonClicked}
       />
       : null }
     </>
@@ -95,8 +101,10 @@ function ProjectOverview(props) {
       </div>
       <div id="line" />
       <div className="ProjectDetails">
-      HOLA
+        <Slideshow Images={[githubImage, websiteLogo]}/>
+        <p>{props.description}</p>
       </div>
+      <button onClick={props.closeButtonClicked}>X</button>
     </div>
   );
 }

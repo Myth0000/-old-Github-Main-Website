@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.c947d071.css",
-    "main.js": "/static/js/main.1e36b77a.js",
+    "main.css": "/static/css/main.54919de4.css",
+    "main.js": "/static/js/main.5b28c8ff.js",
     "static/media/OpenSans-Medium.ttf": "/static/media/OpenSans-Medium.a4894b36b47378c77c5f.ttf",
     "static/media/OpenSans-Regular.ttf": "/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
     "static/media/OpenSans-Bold.ttf": "/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
     "static/media/fiverr.png": "/static/media/fiverr.81b1dc668695115aa3fa.png",
-    "static/media/htmllogo.png": "/static/media/htmllogo.42c3f47a90f43d3fc1b5.png",
-    "static/media/javascriptlogo.png": "/static/media/javascriptlogo.7f8751632b42a9932c15.png",
-    "static/media/Csharp_Logo.png": "/static/media/Csharp_Logo.cee8b732f9e40ac4fb12.png",
-    "static/media/csslogo.png": "/static/media/csslogo.409b3a09bb70c51542f8.png",
-    "static/media/favicon.ico": "/static/media/favicon.4fe75d5f9adb18067b85.ico",
+    "static/media/forwardArrow.png": "/static/media/forwardArrow.0115c7851c78d7052fba.png",
+    "static/media/backwardArrow.png": "/static/media/backwardArrow.9ad12a50fa5c5af7b35b.png",
+    "static/media/myth0000logo.png": "/static/media/myth0000logo.9e7b0f48a7ffe5d332fc.png",
     "index.html": "/index.html",
-    "main.c947d071.css.map": "/static/css/main.c947d071.css.map",
-    "main.1e36b77a.js.map": "/static/js/main.1e36b77a.js.map"
+    "main.54919de4.css.map": "/static/css/main.54919de4.css.map",
+    "main.5b28c8ff.js.map": "/static/js/main.5b28c8ff.js.map"
   },
   "entrypoints": [
-    "static/css/main.c947d071.css",
-    "static/js/main.1e36b77a.js"
+    "static/css/main.54919de4.css",
+    "static/js/main.5b28c8ff.js"
   ]
 }

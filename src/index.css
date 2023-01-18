@@ -400,7 +400,7 @@ Projects Page
   left: 50%;
   translate: -50% -50%;
 
-  display: grid;
+  display: none;
   grid-template-columns: 270px 10px auto;
   align-items: center;
 

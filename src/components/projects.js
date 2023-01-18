@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, ReactDOM } from "react";
 import mockData from "../mockData.json";
 import SocialMedia from "./SocialMedia";
 import Slideshow from "./Slideshow";
@@ -59,6 +59,8 @@ export default class Projects extends React.Component {
         </p>
         <div className="projectsContainer">
           {data.length === 0 ? null : data}
+          <ProjectOverview name={null} description={null} imageUrl={null}
+      socialMediaArray={null} closeButtonClicked={() => document.getElementsByClassName("ProjectOverview")[0].style.display = "none"} />
         </div>
       </div>
     );
@@ -66,31 +68,38 @@ export default class Projects extends React.Component {
 }
 
 function Project(props) {
-  // underlines project name on hover
-  const [showProjectOverview, setShowProjectOverview] = useState(false);
-
 
   function projectClicked() {
-    // updates state
-    setShowProjectOverview(true);
-  }
+    getElement(".ProjectOverview").style.display = "grid";
+    getElement(".ProjectOverview .Project p").textContent = props.name;
+    getElement(".ProjectOverview .Project img").src = props.imageUrl;
+    getElement(".ProjectOverview .ProjectDetails p").textContent = props.description;
 
-  function closeButtonClicked() {
-    setShowProjectOverview(false);
+    getElement(".ProjectOverview .ProjectSocialMediaContainer").appendChild();
+    let socialMediaContainer = document.createElement("div");
+    ReactDOM.render(
+      this.props.socialMediaArray[0]
+    );
+    console.log(props.socialMediaArray);
+
+
+    function getElement(elementName) { return document.querySelector(elementName); }
   }
 
   return (
     <>
       { /* If isDynamic=true, SimpleProject will change on hover & show ProjectOverview on click */ }
       <SimpleProject isDynamic={true} name={props.name} imageUrl={props.imageUrl} projectClicked={projectClicked}/>
-      { showProjectOverview === true ?
-      <ProjectOverview name={props.name} description={props.description} imageUrl={props.imageUrl}
-      socialMediaArray={props.socialMediaArray} closeButtonClicked={closeButtonClicked}
-      />
-      : null }
     </>
   );
 }
+
+/*
+
+<ProjectOverview name={props.name} description={props.description} imageUrl={props.imageUrl}
+      socialMediaArray={props.socialMediaArray} closeButtonClicked={closeButtonClicked} />
+
+*/
 
 function ProjectOverview(props) {
   return (

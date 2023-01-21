@@ -488,7 +488,6 @@ Projects Page
 @media screen and (max-width: 625px) {
   .ProjectOverview {
     width: 350px;
-    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;

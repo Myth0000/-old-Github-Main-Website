@@ -1,5 +1,6 @@
 import React from "react";
-import { useState, ReactDOM } from "react";
+import { useState, useEffect } from "react";
+import {getElement} from "../functions/doc.js";
 import mockData from "../mockData.json";
 import SocialMedia from "./SocialMedia";
 import Slideshow from "./Slideshow";
@@ -41,10 +42,7 @@ export default class Projects extends React.Component {
         description={project.description}
         imageUrl={project.imageUrl}
         link={project.link}
-        socialMediaArray={project.socialMediaArray.map((socialMedia, index) => (
-          <SocialMedia content={socialMedia.content} key={index} size="small"
-          image={socialMedia.imageUrl} link={socialMedia.link} /> 
-        ))}
+        socialMediaArray={project.socialMediaArray}
       />
     ));
 
@@ -60,7 +58,7 @@ export default class Projects extends React.Component {
         <div className="projectsContainer">
           {data.length === 0 ? null : data}
           <ProjectOverview name={null} description={null} imageUrl={null}
-      socialMediaArray={null} closeButtonClicked={() => document.getElementsByClassName("ProjectOverview")[0].style.display = "none"} />
+      socialMediaArray={null} />
         </div>
       </div>
     );
@@ -70,20 +68,47 @@ export default class Projects extends React.Component {
 function Project(props) {
 
   function projectClicked() {
-    getElement(".ProjectOverview").style.display = "grid";
+
+    // switches ProjectOverview's display to grid/flex depending on screen size
+    let projectOverview = getElement(".ProjectOverview");
+    if(document.documentElement.clientWidth <= 625) {
+      projectOverview.style.display = "flex";
+    } else { projectOverview.style.display = "grid"; }
+    
+
     getElement(".ProjectOverview .Project p").textContent = props.name;
     getElement(".ProjectOverview .Project img").src = props.imageUrl;
     getElement(".ProjectOverview .ProjectDetails p").textContent = props.description;
 
-    getElement(".ProjectOverview .ProjectSocialMediaContainer").appendChild();
-    let socialMediaContainer = document.createElement("div");
-    ReactDOM.render(
-      this.props.socialMediaArray[0]
-    );
-    console.log(props.socialMediaArray);
+    // removes any pre-existing social medias from the .ProjectSocialMediaContainer
+    let socialMediaContainer = getElement(".ProjectOverview .ProjectSocialMediaContainer");
+    while(socialMediaContainer.firstChild) {
+      socialMediaContainer.removeChild(socialMediaContainer.firstChild);
+    }
 
+    // adds the list of social media associated with the project to project overview page
+    for(let [index, socialMedia] of props.socialMediaArray.entries()) {
+      // creates a social media
+      let _socialMedia = document.createElement("a");
+      _socialMedia.className = "SocialMedia";
+      _socialMedia.id = "SmallSocialMedia";
+      _socialMedia.href = socialMedia.link;
+      _socialMedia.target = "_blank";
+      getElement(".ProjectOverview .ProjectSocialMediaContainer").appendChild(_socialMedia);
 
-    function getElement(elementName) { return document.querySelector(elementName); }
+      // creates image for social media
+      let socialMediaImage = document.createElement("img");
+      socialMediaImage.draggable = false;
+      socialMediaImage.src = socialMedia.imageUrl;
+      socialMediaImage.alt = "Social Media Image";
+      getElement(".ProjectOverview .ProjectSocialMediaContainer .SocialMedia", index).appendChild(socialMediaImage);
+
+      // creates socialMedia element's content
+      let socialMediaContent = document.createElement("p");
+      socialMediaContent.textContent = socialMedia.content;
+      getElement(".ProjectOverview .ProjectSocialMediaContainer .SocialMedia", index).appendChild(socialMediaContent);
+    }
+    
   }
 
   return (
@@ -102,18 +127,35 @@ function Project(props) {
 */
 
 function ProjectOverview(props) {
+  useEffect(() => {
+  
+    // changes display to grid/flex based on screen size
+    window.addEventListener("resize", () => {
+      let projectOverview = getElement(".ProjectOverview");
+
+      if(projectOverview.style.display !== "none") {
+        let width = document.documentElement.clientWidth;
+        
+        if(width <= 625) { projectOverview.style.display = "flex"; }
+        else { projectOverview.style.display = "grid"; }
+      }
+    });
+
+  });
+
+  
   return (
     <div className="ProjectOverview">
       <div className="ProjectHeader">
         <SimpleProject name={props.name} imageUrl={props.imageUrl} />
-        <div className="ProjectSocialMediaContainer"> {props.socialMediaArray} </div>
+        <div className="ProjectSocialMediaContainer">  </div>
       </div>
       <div id="line" />
       <div className="ProjectDetails">
         <Slideshow Images={[githubImage, websiteLogo]}/>
-        <p>{props.description}</p>
+        <p> </p>
       </div>
-      <button onClick={props.closeButtonClicked}>X</button>
+      <button onClick={() => document.getElementsByClassName("ProjectOverview")[0].style.display = "none"}>X</button>
     </div>
   );
 }

@@ -8,6 +8,9 @@
       "socialMediaArray": [
         {"content": "Github Page", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1064018128914370650/GithubWhite.png", "link": "https://github.com/Myth0000/Myth0000.github.io"},
         {"content": "Website", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699213512805/myth0000logo.png", "link": "https://myth0000.github.io"}
+      ],
+      "images": [
+        
       ]
     },
     {
@@ -19,6 +22,9 @@
       "socialMediaArray": [
         {"content": "Github Page", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1064018128914370650/GithubWhite.png", "link": "https://github.com/Myth0000/ArmadilloGamingDiscordBot"},
         {"content": "Website", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699213512805/myth0000logo.png", "link": "https://myth0000.github.io/armadillogaming"}
+      ],
+      "images": [
+        
       ]
     },
     {
@@ -30,6 +36,9 @@
       "socialMediaArray": [
         {"content": "Github Page", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1064018128914370650/GithubWhite.png", "link": "https://github.com/Myth0000/Snake-Game"},
         {"content": "Website", "imageUrl": "https://media.discordapp.net/attachments/1054848573587603617/1063899699213512805/myth0000logo.png", "link": "https://myth0000.github.io/Snake-Game"}
+      ],
+      "images": [
+        
       ]
     }
   ]

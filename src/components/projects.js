@@ -12,6 +12,9 @@ export default class Projects extends React.Component {
     super();
     this.state = {
       projects: [],
+      projectOverviewInfo: {
+        images: [githubImage, websiteLogo]
+      }
     };
   }
 
@@ -32,42 +35,7 @@ export default class Projects extends React.Component {
     //   });
   }
 
-  render() {
-
-    // converts json project data into a Project react component
-    const data = this.state.projects.map((project) => (
-      <Project
-        key={project.id}
-        name={project.name}
-        description={project.description}
-        imageUrl={project.imageUrl}
-        link={project.link}
-        socialMediaArray={project.socialMediaArray}
-      />
-    ));
-
-// {"content": , "imageUrl": , "link": }
-
-    return (
-      <div className="projects" ref={this.props.scrollReference}>
-        <h1 className="topic_title">Projects</h1>
-        <p className="topic_description">
-          These are some of the projects I have worked on during my software
-          crusade.
-        </p>
-        <div className="projectsContainer">
-          {data.length === 0 ? null : data}
-          <ProjectOverview name={null} description={null} imageUrl={null}
-      socialMediaArray={null} />
-        </div>
-      </div>
-    );
-  }
-}
-
-function Project(props) {
-
-  function projectClicked() {
+  projectClicked(name, imageUrl, description, socialMediaArray, imagesArray) {
 
     // switches ProjectOverview's display to grid/flex depending on screen size
     let projectOverview = getElement(".ProjectOverview");
@@ -76,9 +44,14 @@ function Project(props) {
     } else { projectOverview.style.display = "grid"; }
     
 
-    getElement(".ProjectOverview .Project p").textContent = props.name;
-    getElement(".ProjectOverview .Project img").src = props.imageUrl;
-    getElement(".ProjectOverview .ProjectDetails p").textContent = props.description;
+    getElement(".ProjectOverview .Project p").textContent = name;
+    getElement(".ProjectOverview .Project img").src = imageUrl;
+    getElement(".ProjectOverview .ProjectDetails p").textContent = description;
+    this.setState({
+      projectOverviewInfo: {
+        images: imagesArray
+      }
+    });
 
     // removes any pre-existing social medias from the .ProjectSocialMediaContainer
     let socialMediaContainer = getElement(".ProjectOverview .ProjectSocialMediaContainer");
@@ -87,7 +60,7 @@ function Project(props) {
     }
 
     // adds the list of social media associated with the project to project overview page
-    for(let [index, socialMedia] of props.socialMediaArray.entries()) {
+    for(let [index, socialMedia] of socialMediaArray.entries()) {
       // creates a social media
       let _socialMedia = document.createElement("a");
       _socialMedia.className = "SocialMedia";
@@ -111,20 +84,53 @@ function Project(props) {
     
   }
 
+  render() {
+
+    // converts json project data into a Project react component
+    const data = this.state.projects.map((project) => (
+      <Project
+        key={project.id}
+        name={project.name}
+        description={project.description}
+        imageUrl={project.imageUrl}
+        link={project.link}
+        socialMediaArray={project.socialMediaArray}
+        images={this.state.projectOverviewInfo.images}
+        onClick={() => this.projectClicked(project.name, project.imageUrl, project.description, project.socialMediaArray, project.images)}
+      />
+    ));
+
+
+    return (
+      <div className="projects" ref={this.props.scrollReference}>
+        <h1 className="topic_title">Projects</h1>
+        <p className="topic_description">
+          These are some of the projects I have worked on during my software
+          crusade.
+        </p>
+        <div className="projectsContainer">
+          {data.length === 0 ? null : data}
+          <ProjectOverview name={null} description={null} imageUrl={null}
+      socialMediaArray={null} images={this.state.projectOverviewInfo.images}/>
+        </div>
+      </div>
+    );
+  }
+}
+
+
+
+
+function Project(props) {
   return (
     <>
       { /* If isDynamic=true, SimpleProject will change on hover & show ProjectOverview on click */ }
-      <SimpleProject isDynamic={true} name={props.name} imageUrl={props.imageUrl} projectClicked={projectClicked}/>
+      <SimpleProject isDynamic={true} name={props.name} imageUrl={props.imageUrl}
+      projectClicked={() => props.onClick(props.name, props.imageUrl, props.description, props.socialMediaArray, props.images)}/>
     </>
   );
 }
 
-/*
-
-<ProjectOverview name={props.name} description={props.description} imageUrl={props.imageUrl}
-      socialMediaArray={props.socialMediaArray} closeButtonClicked={closeButtonClicked} />
-
-*/
 
 function ProjectOverview(props) {
   useEffect(() => {
@@ -152,7 +158,7 @@ function ProjectOverview(props) {
       </div>
       <div id="line" />
       <div className="ProjectDetails">
-        <Slideshow Images={[githubImage, websiteLogo]}/>
+        <Slideshow Images={props.images}/>
         <p> </p>
       </div>
       <button onClick={() => document.getElementsByClassName("ProjectOverview")[0].style.display = "none"}>X</button>

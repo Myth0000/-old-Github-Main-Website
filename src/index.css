@@ -112,6 +112,13 @@ Home Page
   .homepage_navigation_buttons {
     flex-direction: column;
   }
+
+  .homepage_navigation_button
+  {
+    width:  180px;
+    height: 50px;
+    font-size: 23px;
+  }
 }
 
 .HomepageContent {

@@ -42,7 +42,6 @@ class Banner extends React.Component {
 
   navigationButtonClicked = (element) =>
   {
-    console.log(element);
     window.scrollTo({
       top: element.current.offsetTop,
       behavior: "smooth"

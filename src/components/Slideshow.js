@@ -7,14 +7,18 @@ export default class Slideshow extends React.Component
     constructor(props)
     {
         super(props);
-        this.state = {slideShowIndex: 0};
+        this.state = {slideShowIndex: props.SlideshowIndex != undefined ? props.SlideshowIndex : 0};
     }
-
+    // !!! try to make it so it checks the old & new props.Images array and if they don't match then update them & update this.state's index
     componentDidMount() {
         // rerenders the banner when resizing page
         window.addEventListener("resize", () => {
             this.forceUpdate();
         });
+
+        // if(this.props.SlideshowIndex) {
+        //     this.setState({slideShowIndex: this.props.SlideshowIndex});
+        // }
     }
 
     forwardButtonClicked()

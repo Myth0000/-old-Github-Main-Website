@@ -13,7 +13,8 @@ export default class Projects extends React.Component {
     this.state = {
       projects: [],
       projectOverviewInfo: {
-        images: [githubImage, websiteLogo]
+        images: [],
+        slideshowIndex: 0
       }
     };
   }
@@ -43,15 +44,16 @@ export default class Projects extends React.Component {
       projectOverview.style.display = "flex";
     } else { projectOverview.style.display = "grid"; }
     
-
+    // fills ProjectOverview with new content
+    this.setState({
+      projectOverviewInfo: {
+        images: imagesArray,
+        slideshowIndex: this.state.projectOverviewInfo.slideshowIndex
+      }
+    });
     getElement(".ProjectOverview .Project p").textContent = name;
     getElement(".ProjectOverview .Project img").src = imageUrl;
     getElement(".ProjectOverview .ProjectDetails p").textContent = description;
-    this.setState({
-      projectOverviewInfo: {
-        images: imagesArray
-      }
-    });
 
     // removes any pre-existing social medias from the .ProjectSocialMediaContainer
     let socialMediaContainer = getElement(".ProjectOverview .ProjectSocialMediaContainer");
@@ -80,8 +82,7 @@ export default class Projects extends React.Component {
       let socialMediaContent = document.createElement("p");
       socialMediaContent.textContent = socialMedia.content;
       getElement(".ProjectOverview .ProjectSocialMediaContainer .SocialMedia", index).appendChild(socialMediaContent);
-    }
-    
+    }    
   }
 
   render() {
@@ -100,7 +101,6 @@ export default class Projects extends React.Component {
       />
     ));
 
-
     return (
       <div className="projects" ref={this.props.scrollReference}>
         <h1 className="topic_title">Projects</h1>
@@ -110,7 +110,7 @@ export default class Projects extends React.Component {
         </p>
         <div className="projectsContainer">
           {data.length === 0 ? null : data}
-          <ProjectOverview name={null} description={null} imageUrl={null}
+          <ProjectOverview name={null} description={null} imageUrl={null} slideshowIndex={this.state.projectOverviewInfo.slideshowIndex}
       socialMediaArray={null} images={this.state.projectOverviewInfo.images}/>
         </div>
       </div>
@@ -132,9 +132,11 @@ function Project(props) {
 }
 
 
+
+
 function ProjectOverview(props) {
+
   useEffect(() => {
-  
     // changes display to grid/flex based on screen size
     window.addEventListener("resize", () => {
       let projectOverview = getElement(".ProjectOverview");
@@ -146,7 +148,6 @@ function ProjectOverview(props) {
         else { projectOverview.style.display = "grid"; }
       }
     });
-
   });
 
   
@@ -158,7 +159,8 @@ function ProjectOverview(props) {
       </div>
       <div id="line" />
       <div className="ProjectDetails">
-        <Slideshow Images={props.images}/>
+        <Slideshow Images={props.images} SlideshowIndex={props.slideshowIndex}/>
+        <h1>{props.slideshowIndex}</h1>
         <p> </p>
       </div>
       <button onClick={() => document.getElementsByClassName("ProjectOverview")[0].style.display = "none"}>X</button>

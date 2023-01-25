@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.54919de4.css",
-    "main.js": "/static/js/main.5b28c8ff.js",
+    "main.css": "/static/css/main.8bc47a77.css",
+    "main.js": "/static/js/main.15e48149.js",
     "static/media/OpenSans-Medium.ttf": "/static/media/OpenSans-Medium.a4894b36b47378c77c5f.ttf",
     "static/media/OpenSans-Regular.ttf": "/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
     "static/media/OpenSans-Bold.ttf": "/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
     "static/media/fiverr.png": "/static/media/fiverr.81b1dc668695115aa3fa.png",
+    "static/media/myth0000logo.png": "/static/media/myth0000logo.70975f628db26f789ad5.png",
     "static/media/forwardArrow.png": "/static/media/forwardArrow.0115c7851c78d7052fba.png",
     "static/media/backwardArrow.png": "/static/media/backwardArrow.9ad12a50fa5c5af7b35b.png",
-    "static/media/myth0000logo.png": "/static/media/myth0000logo.9e7b0f48a7ffe5d332fc.png",
     "index.html": "/index.html",
-    "main.54919de4.css.map": "/static/css/main.54919de4.css.map",
-    "main.5b28c8ff.js.map": "/static/js/main.5b28c8ff.js.map"
+    "main.8bc47a77.css.map": "/static/css/main.8bc47a77.css.map",
+    "main.15e48149.js.map": "/static/js/main.15e48149.js.map"
   },
   "entrypoints": [
-    "static/css/main.54919de4.css",
-    "static/js/main.5b28c8ff.js"
+    "static/css/main.8bc47a77.css",
+    "static/js/main.15e48149.js"
   ]
 }

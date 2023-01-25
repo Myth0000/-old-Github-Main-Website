@@ -169,7 +169,8 @@ function ProjectOverview(props) {
     window.addEventListener("resize", () => {
       let projectOverview = getElement(".ProjectOverview");
 
-      if (projectOverview.style.display !== "none") {
+      if (projectOverview.style.display !== "") {
+        //console.log(projectOverview.style.display);
         let width = document.documentElement.clientWidth;
 
         if (width <= 625) {
@@ -198,7 +199,7 @@ function ProjectOverview(props) {
       <button
         onClick={() =>
           (document.getElementsByClassName("ProjectOverview")[0].style.display =
-            "none")
+            "")
         }
       >
         X

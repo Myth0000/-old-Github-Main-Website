@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.097bb71a.css",
-    "main.js": "/static/js/main.15e48149.js",
+    "main.js": "/static/js/main.065d6b97.js",
     "static/media/OpenSans-Medium.ttf": "/static/media/OpenSans-Medium.a4894b36b47378c77c5f.ttf",
     "static/media/OpenSans-Regular.ttf": "/static/media/OpenSans-Regular.77c09223204154ae8d43.ttf",
     "static/media/OpenSans-Bold.ttf": "/static/media/OpenSans-Bold.fa428cdd2e334e2be904.ttf",
@@ -11,10 +11,10 @@
     "static/media/backwardArrow.png": "/static/media/backwardArrow.9ad12a50fa5c5af7b35b.png",
     "index.html": "/index.html",
     "main.097bb71a.css.map": "/static/css/main.097bb71a.css.map",
-    "main.15e48149.js.map": "/static/js/main.15e48149.js.map"
+    "main.065d6b97.js.map": "/static/js/main.065d6b97.js.map"
   },
   "entrypoints": [
     "static/css/main.097bb71a.css",
-    "static/js/main.15e48149.js"
+    "static/js/main.065d6b97.js"
   ]
 }

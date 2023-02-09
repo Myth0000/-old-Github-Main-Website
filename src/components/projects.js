@@ -20,19 +20,19 @@ export default class Projects extends React.Component {
   }
 
   componentDidMount() {
-    // MOCK DATA
-    this.setState({
-      projects: mockData,
-    });
+    // // MOCK DATA
+    // this.setState({
+    //   projects: mockData,
+    // });
 
-    // USE THIS AFTER I FINNALLY HOST THE ProjectsAPI
-    // let projectsJson = fetch("/projects")
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     this.setState({
-    //       projects: data,
-    //     });
-    //   });
+    //USE THIS AFTER I FINNALLY HOST THE ProjectsAPI
+    let projectsJson = fetch("https://myth0000api.azurewebsites.net/Projects/GetProjects")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({
+          projects: data,
+        });
+      });
   }
 
   projectClicked(name, imageUrl, description, socialMediaArray, imagesArray) {
@@ -47,7 +47,7 @@ export default class Projects extends React.Component {
     // fills ProjectOverview with new content
     this.setState({
       projectOverviewInfo: {
-        images: imagesArray,
+        images: imagesArray.map(imageObject => imageObject.url),
         slideshowIndex: this.state.projectOverviewInfo.slideshowIndex,
       },
     });

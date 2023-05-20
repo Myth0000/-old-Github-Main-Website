@@ -126,7 +126,7 @@ export default class Projects extends React.Component {
           crusade.
         </p>
         <div className="projectsContainer">
-          {data.length === 0 ? null : data}
+          {data.length === 0 ? [<SimpleProject key="0" name="Loading..."/>, <SimpleProject key="1" name="Loading..."/>, <SimpleProject key="2" name="Loading..."/>] : data}
           <ProjectOverview
             name={null}
             description={null}
@@ -212,7 +212,7 @@ function SimpleProject(props) {
   const [textDeco, setTextDecoration] = useState("none");
   let content = (
     <>
-      <img src={props.imageUrl} draggable="false" />
+      <img src={props.imageUrl} draggable="false" alt={props.name}/>
       <p style={{ textDecoration: textDeco }}>{props.name}</p>
     </>
   );
